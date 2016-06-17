@@ -42,7 +42,7 @@ or loading it with AMD (RequireJS) or CommonJS.
 
 This plugin depends on:
 
-- DataTables v1.10+
+- DataTables v1.10.6+
 - jQuery v1.7+ (necessary by DataTables)
 - mark.js v6.2+ (jQuery plugin)
 
@@ -87,8 +87,8 @@ of possible options.
 Now that you've activated the plugin you just need to define your custom styles
 for the highlighted elements. If you haven't defined a custom `element` or
 `className` in the mark.js options the default element will be `mark` without
-having a class name assigned. If you don't want to have custom styles, you can
-embed one of the default CSS files:
+having a class assigned. If you don't want to have custom styles, you can embed
+one of the default CSS files:
 
 - [datatables.mark.css][datatables-mark-css]
 - [datatables.mark.min.css][datatables-mark-min-css]
