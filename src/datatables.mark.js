@@ -69,18 +69,21 @@ class Mark_DataTables {
 
 // hook into all DataTables initializations
 $(document).on("init.dt.dth", (event, settings) => {
+    // check if the event was triggered from DataTables
+    if(event.namespace !== "dt"){
+        return;
+    }
+    // check if mark.js is enabled for this instance or by default
     let options = null;
     if(settings.oInit.mark) {
         options = settings.oInit.mark;
     } else if($.fn.dataTable.defaults.mark) {
         options = $.fn.dataTable.defaults.mark;
     }
-    // check if the event namespace is from DataTables and if
-    // mark.js is enabled for this instance or by default
-    if(event.namespace !== "dt" || options === null) {
+    if(options === null) {
         return;
     }
     // get DataTables table instance by settings object containing
-    // the unique table id
+    // the unique table id and initialize plugin instance
     new Mark_DataTables($.fn.dataTable.Api(settings), options);
 });

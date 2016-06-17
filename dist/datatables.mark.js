@@ -76,14 +76,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     $(document).on("init.dt.dth", function (event, settings) {
+        if (event.namespace !== "dt") {
+            return;
+        }
+
         var options = null;
         if (settings.oInit.mark) {
             options = settings.oInit.mark;
         } else if ($.fn.dataTable.defaults.mark) {
             options = $.fn.dataTable.defaults.mark;
         }
-
-        if (event.namespace !== "dt" || options === null) {
+        if (options === null) {
             return;
         }
 

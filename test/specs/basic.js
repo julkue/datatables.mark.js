@@ -152,4 +152,18 @@ describe("basic", function () {
         });
     });
 
+    describe("document init trigger not called from DataTables", function () {
+        var errThrown = false;
+        beforeEach(function () {
+            try {
+                $(document).trigger("init");
+            } catch (e) {
+                errThrown = true;
+            }
+        });
+        it("should not throw an exception", function () {
+            expect(errThrown).toBe(false);
+        });
+    });
+
 });

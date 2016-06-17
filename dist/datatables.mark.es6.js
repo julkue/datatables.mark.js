@@ -59,14 +59,17 @@
     }
 
     $(document).on("init.dt.dth", (event, settings) => {
+        if (event.namespace !== "dt") {
+            return;
+        }
+
         let options = null;
         if (settings.oInit.mark) {
             options = settings.oInit.mark;
         } else if ($.fn.dataTable.defaults.mark) {
             options = $.fn.dataTable.defaults.mark;
         }
-
-        if (event.namespace !== "dt" || options === null) {
+        if (options === null) {
             return;
         }
 
