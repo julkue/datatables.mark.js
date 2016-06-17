@@ -80,9 +80,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return;
         }
 
+        var dtInstance = $.fn.dataTable.Api(settings);
+
         var options = null;
-        if (settings.oInit.mark) {
-            options = settings.oInit.mark;
+        if (dtInstance.init().mark) {
+            options = dtInstance.init().mark;
         } else if ($.fn.dataTable.defaults.mark) {
             options = $.fn.dataTable.defaults.mark;
         }
@@ -90,6 +92,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return;
         }
 
-        new Mark_DataTables($.fn.dataTable.Api(settings), options);
+        new Mark_DataTables(dtInstance, options);
     });
 }, window, document);

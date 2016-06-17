@@ -73,17 +73,19 @@ $(document).on("init.dt.dth", (event, settings) => {
     if(event.namespace !== "dt"){
         return;
     }
+    // get DataTables table instance by settings object containing the unique
+    // table id
+    const dtInstance = $.fn.dataTable.Api(settings);
     // check if mark.js is enabled for this instance or by default
     let options = null;
-    if(settings.oInit.mark) {
-        options = settings.oInit.mark;
+    if(dtInstance.init().mark) {
+        options = dtInstance.init().mark;
     } else if($.fn.dataTable.defaults.mark) {
         options = $.fn.dataTable.defaults.mark;
     }
     if(options === null) {
         return;
     }
-    // get DataTables table instance by settings object containing
-    // the unique table id and initialize plugin instance
-    new Mark_DataTables($.fn.dataTable.Api(settings), options);
+    // initialize plugin instance
+    new Mark_DataTables(dtInstance, options);
 });
