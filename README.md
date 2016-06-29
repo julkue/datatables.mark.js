@@ -21,6 +21,11 @@ Either clone or [download][zip-download] this repository manually, or with
 $ bower install datatables.mark.js --save-dev
 ```
 
+### CDN
+
+Alternatively the plugin is also available in the DataTables CDN, listed under plugins -> features [here][datatables-plugins-cdn].  
+For example the datatables.mark.js CDN links for DataTables v1.10.12 can be found [here][datatables-plugins-cdn-1-10-12].
+
 ### Integration
 
 Finally, you'll have to embed one of these files:
@@ -114,6 +119,8 @@ Happy hacking!
 
 [zip-download]: https://github.com/julmot/datatables.mark.js/archive/master.zip
 [bower]: https://bower.io/
+[datatables-plugins-cdn]: https://cdn.datatables.net/plug-ins/
+[datatables-plugins-cdn-1-10-12]: https://cdn.datatables.net/plug-ins/1.10.12/features/
 [markjs-website]: https://markjs.io/
 [markjs-website-mark]: https://markjs.io/#mark
 [datatables-mark-css]: https://github.com/julmot/datatables.mark.js/blob/master/dist/datatables.mark.css
