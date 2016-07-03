@@ -1,5 +1,5 @@
 /*!***************************************************
- * datatables.mark.js v1.0.0
+ * datatables.mark.js v1.0.1
  * https://github.com/julmot/datatables.mark.js
  * Copyright (c) 2016, Julian Motz
  * Released under the MIT license https://git.io/voRZ7
@@ -14,13 +14,15 @@ class Mark_DataTables {
      * @param  {object} [options] - mark.js options
      */
     constructor(dtInstance, options) {
-        if(typeof $.fn.mark !== "function" || typeof $.fn.unmark !== "function"){
+        if(typeof $.fn.mark !== "function" || typeof $.fn.unmark !== "function") {
             throw new Error(
                 "jquery.mark.js is necessary for datatables.mark.js"
             );
         }
         this.instance = dtInstance;
         this.options = typeof options === "object" ? options : {};
+        this.intervalThreshold = 49;
+        this.intervalMs = 300;
         this.initMarkListener();
     }
 
@@ -28,16 +30,27 @@ class Mark_DataTables {
      * Hooks into DataTables init events to call {@link Mark_DataTables#mark}
      */
     initMarkListener() {
-        // hook into the draw event
-        this.instance.on(
-            "draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth",
-            this.mark.bind(this)
-        );
+        const ev = "draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth";
+        let intvl = null;
+        this.instance.on(ev, () => {
+            // mark matches directly or after a specific time if there are more
+            // rows than the thresold
+            const rows = this.instance.rows({
+                filter: "applied",
+                page: "current"
+            }).nodes().length;
+            if(rows > this.intervalThreshold) {
+                clearTimeout(intvl);
+                intvl = setTimeout(() => {
+                    this.mark();
+                }, this.intervalMs);
+            } else {
+                this.mark();
+            }
+        });
         this.instance.on("destroy", () => {
             // remove listener
-            this.instance.off(
-                "draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth"
-            );
+            this.instance.off(ev);
         });
         this.mark();
     }
@@ -49,7 +62,6 @@ class Mark_DataTables {
      */
     mark() {
         const globalSearch = this.instance.search();
-
         $(this.instance.table().body()).unmark(this.options);
         this.instance.columns({
             search: "applied",
@@ -70,7 +82,7 @@ class Mark_DataTables {
 // hook into all DataTables initializations
 $(document).on("init.dt.dth", (event, settings) => {
     // check if the event was triggered from DataTables
-    if(event.namespace !== "dt"){
+    if(event.namespace !== "dt") {
         return;
     }
     // get DataTables table instance by settings object containing the unique
