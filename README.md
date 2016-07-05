@@ -6,6 +6,14 @@
 [![Bower Version][bower-version-image]][bower-version]
 [![License][license-image]][license]
 
+## Examples
+
+- [DataTables global search highlighting][jsfiddle-datatables]
+- [DataTables column search highlighting][jsfiddle-datatables-column]
+
+[jsfiddle-datatables]: https://jsfiddle.net/julmot/buh9h2r8/
+[jsfiddle-datatables-column]: https://jsfiddle.net/julmot/c2am6zfr/
+
 ## Getting Started
 
 datatables.mark.js is a plugin to integrate [mark.js][markjs-website] – a
