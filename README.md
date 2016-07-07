@@ -31,8 +31,13 @@ $ bower install datatables.mark.js --save-dev
 
 ### CDN
 
-Alternatively the plugin is also available in the DataTables CDN, listed under plugins -> features [here][datatables-plugins-cdn].  
-For example the datatables.mark.js CDN links for DataTables v1.10.12 can be found [here][datatables-plugins-cdn-1-10-12].
+Alternatively the plugin is also available on the following CDN's:
+
+- [jsDelivr][markjs-jsdelivr]
+- [DataTables CDN][datatables-plugins-cdn] listed under plugins -> features. For example the links for DataTables v1.10.12 can be found [here][datatables-plugins-cdn-1-10-12]
+
+Because the DataTables CDN only updates plugins at own releases and you can't specify an explicit plugin version, it's recommended to use jsDelivr.
+
 
 ### Integration
 
@@ -127,6 +132,7 @@ Happy hacking!
 
 [zip-download]: https://github.com/julmot/datatables.mark.js/archive/master.zip
 [bower]: https://bower.io/
+[markjs-jsdelivr]: http://www.jsdelivr.com/projects/datatables.mark.js
 [datatables-plugins-cdn]: https://cdn.datatables.net/plug-ins/
 [datatables-plugins-cdn-1-10-12]: https://cdn.datatables.net/plug-ins/1.10.12/features/
 [markjs-website]: https://markjs.io/
