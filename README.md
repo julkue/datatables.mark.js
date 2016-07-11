@@ -19,7 +19,7 @@ global searches and highlights the search term in the table.
 
 ### Download
 
-Either clone or [download][zip-download] this repository manually, or with
+Either clone or [download][zip-download] this plugin manually, or with
 [Bower][bower] using:
 
 ```bash
@@ -137,7 +137,7 @@ Happy hacking!
 [bower-version-image]: https://img.shields.io/bower/v/datatables.mark.js.svg
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 
-[zip-download]: https://github.com/julmot/datatables.mark.js/archive/master.zip
+[zip-download]: https://cdn.jsdelivr.net/datatables.mark.js/latest/datatables.mark.js.zip
 [bower]: https://bower.io/
 [markjs-jsdelivr]: http://www.jsdelivr.com/projects/datatables.mark.js
 [datatables-plugins-cdn]: https://cdn.datatables.net/plug-ins/
