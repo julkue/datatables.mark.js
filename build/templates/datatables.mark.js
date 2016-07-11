@@ -7,11 +7,11 @@
  "use strict";
  ((factory, window, document) => {
      if(typeof define === "function" && define.amd) {
-         define(["jquery", "datatables", "markjs"], jQuery => {
+         define(["jquery", "datatables.net", "markjs"], jQuery => {
              return factory(window, document, jQuery);
          });
      } else if(typeof exports === "object") {
-         require("datatables");
+         require("datatables.net");
          require("markjs");
          factory(window, document, require("jquery"));
      } else {

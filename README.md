@@ -11,9 +11,6 @@
 - [DataTables global search highlighting][jsfiddle-datatables]
 - [DataTables column search highlighting][jsfiddle-datatables-column]
 
-[jsfiddle-datatables]: https://jsfiddle.net/julmot/buh9h2r8/
-[jsfiddle-datatables-column]: https://jsfiddle.net/julmot/c2am6zfr/
-
 ## Getting Started
 
 datatables.mark.js is a plugin to integrate [mark.js][markjs-website] – a
@@ -55,6 +52,16 @@ into your application, by either referencing the file manually using e.g.:
 ```
 
 or loading it with AMD (RequireJS) or CommonJS.
+
+When using RequireJS you should configure the names of dependent modules as
+following:
+
+- jQuery must be named "jquery"
+- DataTables must be named "datatables.net" (defined by DataTables itself)
+- mark.js must be named "markjs"
+
+This is important as datatables.mark.js will load these modules as dependencies.
+You might have a look at [this example][jsfiddle-requirejs].
 
 ### Dependencies
 
@@ -141,3 +148,7 @@ Happy hacking!
 [datatables-mark-min-css]: https://github.com/julmot/datatables.mark.js/blob/master/dist/datatables.mark.min.css
 [contributing]: https://github.com/julmot/datatables.mark.js/blob/master/CONTRIBUTING.md
 [releases]: https://github.com/julmot/datatables.mark.js/releases
+
+[jsfiddle-datatables]: https://jsfiddle.net/julmot/buh9h2r8/
+[jsfiddle-datatables-column]: https://jsfiddle.net/julmot/c2am6zfr/
+[jsfiddle-requirejs]: https://jsfiddle.net/julmot/5bhpwc8h/
