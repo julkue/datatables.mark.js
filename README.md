@@ -35,6 +35,15 @@ Alternatively the plugin is also available on the following CDN's:
 
 Because the DataTables CDN only updates plugins at own releases and you can't specify an explicit plugin version, it's recommended to use jsDelivr.
 
+### Dependencies
+
+This plugin depends on:
+
+- DataTables v1.10.6+
+- jQuery v1.7+ (necessary by DataTables)
+- mark.js v6.2+ (jQuery plugin)
+
+When using a module loader like RequireJS they will be loaded automatically.
 
 ### Integration
 
@@ -62,16 +71,6 @@ following:
 
 This is important as datatables.mark.js will load these modules as dependencies.
 You might have a look at [this example][jsfiddle-requirejs].
-
-### Dependencies
-
-This plugin depends on:
-
-- DataTables v1.10.6+
-- jQuery v1.7+ (necessary by DataTables)
-- mark.js v6.2+ (jQuery plugin)
-
-When using a module loader like RequireJS they will be loaded automatically.
 
 ## Usage
 
