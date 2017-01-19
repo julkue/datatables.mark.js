@@ -68,9 +68,10 @@ framework.
 | Grunt task | Description                                                      |
 |------------|------------------------------------------------------------------|
 | dev        | For development. Will run `test` on file changes                 |
-| dist       | Will trigger `compile`, `test` and creates a JSDOC documentation |
+| dist       | Triggers `compile`, `test` and creates a JSDOC documentation     |
 | compile    | Generates all files in `./dist`                                  |
-| test       | Runs the test and creates test coverage                          |
+| lint       | Runs ESLint lint                                                 |
+| test       | Runs the test, `lint` and creates test coverage                  |
 
 _Note: Run tasks with `$ grunt [task]` (Replace "[task]" with the actual task name)._
 

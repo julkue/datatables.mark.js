@@ -26,11 +26,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         factory(window, document, jQuery);
     }
 })(function (window, document, $) {
-    var Mark_DataTables = function () {
-        function Mark_DataTables(dtInstance, options) {
-            _classCallCheck(this, Mark_DataTables);
+    var MarkDataTables = function () {
+        function MarkDataTables(dtInstance, options) {
+            _classCallCheck(this, MarkDataTables);
 
-            if (typeof $.fn.mark !== "function" || typeof $.fn.unmark !== "function") {
+            if (!$.fn.mark || !$.fn.unmark) {
                 throw new Error("jquery.mark.js is necessary for datatables.mark.js");
             }
             this.instance = dtInstance;
@@ -40,7 +40,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.initMarkListener();
         }
 
-        _createClass(Mark_DataTables, [{
+        _createClass(MarkDataTables, [{
             key: "initMarkListener",
             value: function initMarkListener() {
                 var _this = this;
@@ -88,7 +88,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
         }]);
 
-        return Mark_DataTables;
+        return MarkDataTables;
     }();
 
     $(document).on("init.dt.dth", function (event, settings) {
@@ -108,6 +108,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return;
         }
 
-        new Mark_DataTables(dtInstance, options);
+        new MarkDataTables(dtInstance, options);
     });
 }, window, document);

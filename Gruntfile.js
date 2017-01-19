@@ -68,6 +68,12 @@ module.exports = grunt => {
             build: ["build/*.js"],
             dist: ["dist/*.js"]
         },
+        eslint: {
+            options: {
+                configFile: ".eslintrc"
+            },
+            target: ["src/**/*.js", "test/**/*.js"]
+        },
         jsdoc: {
             dist: {
                 src: [`src/${mainFile}`, "README.md"],
@@ -78,7 +84,7 @@ module.exports = grunt => {
         },
         karma: {
             options: {
-                configFile: "karma.conf.js"
+                configFile: "karma.conf.js" // shared config
             },
             build: {},
             dev: {
@@ -153,13 +159,20 @@ module.exports = grunt => {
     grunt.registerTask("dev", ["karma:dev:start", "watch"]);
 
     /**
+     * Run lint
+     */
+    grunt.registerTask("lint", function () {
+        grunt.task.run(["eslint"]);
+    });
+
+    /**
      * Run tests
      */
     grunt.registerTask("test", function () {
         grunt.log.subhead(
             "See the table below for test coverage or view 'build/coverage/'"
         );
-        grunt.task.run(["compile", "karma:build"]);
+        grunt.task.run(["compile", "lint", "karma:build"]);
     });
 
     /**

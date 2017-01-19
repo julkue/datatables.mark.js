@@ -20,9 +20,9 @@
         factory(window, document, jQuery);
     }
 })((window, document, $) => {
-    class Mark_DataTables {
+    class MarkDataTables {
         constructor(dtInstance, options) {
-            if (typeof $.fn.mark !== "function" || typeof $.fn.unmark !== "function") {
+            if (!$.fn.mark || !$.fn.unmark) {
                 throw new Error("jquery.mark.js is necessary for datatables.mark.js");
             }
             this.instance = dtInstance;
@@ -91,6 +91,6 @@
             return;
         }
 
-        new Mark_DataTables(dtInstance, options);
+        new MarkDataTables(dtInstance, options);
     });
 }, window, document);

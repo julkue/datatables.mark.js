@@ -7,14 +7,14 @@
 /**
  * Initializes mark.js on the specified DataTables instance
  */
-class Mark_DataTables {
+class MarkDataTables {
 
     /**
      * @param  {object} dtInstance - A DataTables instance
      * @param  {object} [options] - mark.js options
      */
     constructor(dtInstance, options) {
-        if(typeof $.fn.mark !== "function" || typeof $.fn.unmark !== "function") {
+        if(!$.fn.mark || !$.fn.unmark) {
             throw new Error(
                 "jquery.mark.js is necessary for datatables.mark.js"
             );
@@ -99,5 +99,5 @@ $(document).on("init.dt.dth", (event, settings) => {
         return;
     }
     // initialize plugin instance
-    new Mark_DataTables(dtInstance, options);
+    new MarkDataTables(dtInstance, options);
 });

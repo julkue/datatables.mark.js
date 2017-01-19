@@ -115,9 +115,9 @@ describe("basic", function () {
             dtInstance.destroy();
         });
         it("should wrap column specific search term matches", function () {
-            var $colMark = $ctx.find("table tbody td:first-child mark");
+            var $colMark = $ctx.find("table tbody td:first-child mark"),
+                textOpts = ["A", "a"];
             expect($colMark).toHaveLength(16);
-            var textOpts = ["A", "a"];
             $colMark.each(function () {
                 expect($.inArray($(this).text(), textOpts)).toBeGreaterThan(-1);
             });
