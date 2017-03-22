@@ -34,7 +34,7 @@
   "dependencies": {
     "jquery": ">1.10",
     "datatables": ">1.7",
-    "mark.js": "github:julmot/mark.js"
+    "mark.js": "julmot/mark.js"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
