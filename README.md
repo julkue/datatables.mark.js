@@ -3,6 +3,7 @@
 ##### A DataTables plugin for mark.js to highlight search terms in tables
 
 [![Build Status][build-status-image]][build-status]
+[![npm Version][npm-version-image]][npm-version]
 [![Bower Version][bower-version-image]][bower-version]
 [![License][license-image]][license]
 
@@ -13,14 +14,17 @@
 
 ## Getting Started
 
-datatables.mark.js is a plugin to integrate [mark.js][markjs-website] – a
-JavaScript keyword highlighter – into DataTables. It detects column specific or
-global searches and highlights the search term in the table.
+datatables.mark.js is a plugin to integrate [mark.js][markjs-website] – a JavaScript keyword highlighter – into DataTables. It detects column specific or global searches and highlights the search term in the table.
 
 ### Download
 
-Either clone or [download][zip-download] this plugin manually, or with
-[Bower][bower] using:
+Either clone or [download][zip-download] this plugin manually, or with [npm][npm]:
+
+```bash
+$ npm install datatables.mark.js --save-dev
+```
+
+Or with [Bower][bower] using:
 
 ```bash
 $ bower install datatables.mark.js --save-dev
@@ -130,13 +134,16 @@ Happy hacking!
 
 [build-status]: https://travis-ci.org/julmot/datatables.mark.js
 [bower-version]: https://github.com/julmot/datatables.mark.js
+[npm-version]: https://www.npmjs.com/package/datatables.mark.js
 [license]: https://raw.githubusercontent.com/julmot/datatables.mark.js/master/LICENSE
 
 [build-status-image]: https://img.shields.io/travis/julmot/datatables.mark.js/master.svg?label=test
+[npm-version-image]: https://img.shields.io/npm/v/datatables.mark.js.svg
 [bower-version-image]: https://img.shields.io/bower/v/datatables.mark.js.svg
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 
 [zip-download]: https://cdn.jsdelivr.net/gh/julmot/datatables.mark.js/dist/
+[npm]: https://www.npmjs.com/
 [bower]: https://bower.io/
 [markjs-jsdelivr]: https://cdn.jsdelivr.net/gh/julmot/datatables.mark.js/dist/
 [datatables-plugins-cdn]: https://cdn.datatables.net/plug-ins/
