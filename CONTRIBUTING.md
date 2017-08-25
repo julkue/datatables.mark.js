@@ -28,13 +28,12 @@ Please provide the following information:
 
 ### 2.1 General
 
-_Requirements: [NodeJS][nodejs] (including npm) and [Bower][bower] installed._
+_Requirements: Latest [NodeJS][nodejs] (including npm) and [Bower][bower] installed._
 
 Before you start developing, you should clone or download this repository and run:
 
 ```bash
-$ bower install
-$ npm install
+$ bower install && npm install
 ```
 
 Now you are ready to develop.

@@ -41,9 +41,9 @@ This plugin depends on:
 
 - DataTables v1.10.6+
 - jQuery v1.7+ (necessary by DataTables)
-- mark.js v6.2+ (jQuery plugin)
+- mark.js v6.2+ (the [jQuery version][markjs-jquery])
 
-When using a module loader like RequireJS they will be loaded automatically.
+When using a module loader like CommonJS (e.g. Webpack) or AMD (e.g. RequireJS) they will be loaded automatically.
 
 ### Integration
 
@@ -60,7 +60,7 @@ into your application, by either referencing the file manually using e.g.:
 <script src="vendor/datatables.mark.js/dist/datatables.mark.js"></script>
 ```
 
-or loading it with AMD (RequireJS) or CommonJS.
+or loading it with AMD or CommonJS.
 
 When using RequireJS you should configure the names of dependent modules as
 following:
@@ -136,11 +136,12 @@ Happy hacking!
 [bower-version-image]: https://img.shields.io/bower/v/datatables.mark.js.svg
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 
-[zip-download]: https://cdn.jsdelivr.net/datatables.mark.js/latest/datatables.mark.js.zip
+[zip-download]: https://cdn.jsdelivr.net/gh/julmot/datatables.mark.js/dist/
 [bower]: https://bower.io/
-[markjs-jsdelivr]: http://www.jsdelivr.com/projects/datatables.mark.js
+[markjs-jsdelivr]: https://cdn.jsdelivr.net/gh/julmot/datatables.mark.js/dist/
 [datatables-plugins-cdn]: https://cdn.datatables.net/plug-ins/
 [datatables-plugins-cdn-latest]: https://cdn.datatables.net/plug-ins/1.10.13/features/
+[markjs-jquery]: https://github.com/julmot/mark.js/blob/master/dist/jquery.mark.min.js
 [markjs-website]: https://markjs.io/
 [markjs-website-mark]: https://markjs.io/#mark
 [datatables-mark-css]: https://github.com/julmot/datatables.mark.js/blob/master/dist/datatables.mark.css
