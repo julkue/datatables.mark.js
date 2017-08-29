@@ -1,5 +1,5 @@
 /*!***************************************************
- * datatables.mark.js v2.0.0
+ * datatables.mark.js v2.0.1
  * https://github.com/julmot/datatables.mark.js
  * Copyright (c) 2016–2017, Julian Motz
  * Released under the MIT license https://git.io/voRZ7

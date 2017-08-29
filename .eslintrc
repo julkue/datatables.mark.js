@@ -10,7 +10,9 @@
     "browser": true,
     "jasmine": true,
     "jquery": true,
-    "node": true
+    "node": true,
+    "amd": true,
+    "commonjs": true
   },
   "parserOptions": {
     "ecmaVersion": 6,
@@ -18,9 +20,6 @@
       "experimentalObjectRestSpread": true
     },
     "sourceType": "module"
-  },
-  "globals": {
-    "Drupal": true
   },
   "rules": {
     "no-template-curly-in-string": "error",

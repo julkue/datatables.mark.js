@@ -11,7 +11,7 @@ module.exports = config => {
     frameworks: ['jasmine-jquery', 'jasmine'],
     files: [
       'vendor/jquery/dist/jquery.min.js',
-      'vendor/datatables/media/js/jquery.dataTables.min.js',
+      'vendor/datatables.net/js/jquery.dataTables.min.js',
       'vendor/mark.js/dist/jquery.mark.min.js',
       'dist/!(*.es6|*.min).js',
       'test/specs/configuration.js',
