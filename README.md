@@ -145,7 +145,7 @@ Happy hacking!
 [zip-download]: https://cdn.jsdelivr.net/gh/julmot/datatables.mark.js/dist/
 [npm]: https://www.npmjs.com/
 [bower]: https://bower.io/
-[markjs-jsdelivr]: https://cdn.jsdelivr.net/gh/julmot/datatables.mark.js/dist/
+[markjs-jsdelivr]: https://www.jsdelivr.com/package/gh/julmot/datatables.mark.js
 [datatables-plugins-cdn]: https://cdn.datatables.net/plug-ins/
 [datatables-plugins-cdn-latest]: https://cdn.datatables.net/plug-ins/1.10.13/features/
 [markjs-jquery]: https://github.com/julmot/mark.js/blob/master/dist/jquery.mark.min.js
