@@ -34,7 +34,7 @@
   "dependencies": {
     "jquery": ">=1.10",
     "datatables.net": ">=1.7",
-    "mark.js": "julmot/mark.js"
+    "mark.js": ">=6.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
