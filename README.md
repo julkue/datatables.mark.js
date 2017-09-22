@@ -1,5 +1,7 @@
 # datatables.mark.js
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/julmot/datatables.mark.js.svg)](https://greenkeeper.io/)
+
 ##### A DataTables plugin for mark.js to highlight search terms in tables
 
 [![Build Status][build-status-image]][build-status]
