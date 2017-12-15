@@ -57,7 +57,7 @@
     "karma-jasmine": "^1.1.0",
     "karma-jasmine-jquery": "^0.1.1",
     "karma-phantomjs-launcher": "^1.0.4",
-    "karma-spec-reporter": "^0.0.31",
+    "karma-spec-reporter": "^0.0.32",
     "phantomjs-prebuilt": "^2.1.15"
   }
 }
