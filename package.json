@@ -19,7 +19,7 @@
   "license": "MIT",
   "homepage": "https://markjs.io/",
   "author": {
-    "name": "Julian Motz",
+    "name": "Julian Kühel",
     "url": "https://github.com/julmot"
   },
   "description": "A DataTables plugin for mark.js to highlight search terms in tables",
