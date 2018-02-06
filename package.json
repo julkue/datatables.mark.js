@@ -50,7 +50,7 @@
     "grunt-eslint": "^20.1.0",
     "grunt-jsdoc": "^2.1.1",
     "grunt-karma": "^2.0.0",
-    "jasmine-core": "^2.8.0",
+    "jasmine-core": "^3.0.0",
     "jit-grunt": "^0.10.0",
     "karma": "^2.0.0",
     "karma-coverage": "^1.1.1",
