@@ -11,7 +11,6 @@
 <head>
   <meta charset="utf-8">
   <title>datatables.mark.js test (dev purposes)</title>
-  <link rel="stylesheet" type="text/css" href="../vendor/datatables.net/media/css/jquery.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="../dist/datatables.mark.css">
 </head>
 <body>
@@ -23,9 +22,13 @@
 <script>
   $(function() {
     $("div").load("fixtures/basic.html", function() {
-      $(this).find("table").DataTable({
+      const instance = $(this).find("table").DataTable({
         mark: true
       });
+      setTimeout(() => {
+        instance.column(0).search('A').draw();
+        instance.search('Lon').draw();
+      }, 1000);
     });
   });
 </script>

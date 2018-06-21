@@ -78,12 +78,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.instance.columns({
           search: 'applied',
           page: 'current'
-        }).nodes().each(function (nodes, colIndex) {
-          var columnSearch = _this2.instance.column(colIndex).search(),
-              columnRegex = _this2.instance.columns().search.isRegex();
-          if (columnSearch) {
-            searchPattern = columnSearch;
-            searchRegex = columnRegex;
+        }).nodes().each(function (nodes, colIdx) {
+          var colSearch = _this2.instance.column(colIdx).search(),
+              colRegex = _this2.instance.columns().search.isRegex().toArray()[colIdx];
+          if (colSearch) {
+            searchPattern = colSearch;
+            searchRegex = colRegex;
           }
           if (searchPattern) {
             nodes.forEach(function (node) {

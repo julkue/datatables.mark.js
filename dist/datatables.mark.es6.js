@@ -63,12 +63,12 @@
       this.instance.columns({
         search: 'applied',
         page: 'current'
-      }).nodes().each((nodes, colIndex) => {
-        const columnSearch = this.instance.column(colIndex).search(),
-              columnRegex = this.instance.columns().search.isRegex();
-        if (columnSearch) {
-          searchPattern = columnSearch;
-          searchRegex = columnRegex;
+      }).nodes().each((nodes, colIdx) => {
+        const colSearch = this.instance.column(colIdx).search(),
+              colRegex = this.instance.columns().search.isRegex().toArray()[colIdx];
+        if (colSearch) {
+          searchPattern = colSearch;
+          searchRegex = colRegex;
         }
         if (searchPattern) {
           nodes.forEach(node => {
