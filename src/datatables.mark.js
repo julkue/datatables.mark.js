@@ -1,5 +1,5 @@
 /*!***************************************************
- * datatables.mark.js v2.0.1
+ * datatables.mark.js v2.1.0
  * https://github.com/julmot/datatables.mark.js
  * Copyright (c) 2016–2018, Julian Kühnel
  * Released under the MIT license https://git.io/voRZ7
@@ -61,23 +61,48 @@ class MarkDataTables {
    * terms
    */
   mark() {
-    const globalSearch = this.instance.search();
+    let searchPattern = this.instance.search(),
+      searchRegex = this.instance.search.isRegex();
     $(this.instance.table().body()).unmark(this.options);
     this.instance.columns({
       search: 'applied',
       page: 'current'
     }).nodes().each((nodes, colIndex) => {
       const columnSearch = this.instance.column(colIndex).search(),
-        searchVal = columnSearch || globalSearch;
-      if (searchVal) {
+        columnRegex = this.instance.columns().search.isRegex();
+      if (columnSearch) {
+        searchPattern = columnSearch;
+        searchRegex = columnRegex;
+      }
+      if (searchPattern) {
         nodes.forEach(node => {
-          $(node).mark(searchVal, this.options);
+          if (!searchRegex) {
+            $(node).mark(searchPattern, this.options);
+          } else {
+            $(node).markRegExp(searchPattern, this.options);
+          }
         });
       }
     });
   }
 
 }
+
+// make it possible to detect RegExp search
+$.fn.dataTable.Api.register('search.isRegex()', function() {
+  const ctx = this.context;
+  return ctx.length !== 0 ? ctx[0].oPreviousSearch.bRegex : false;
+});
+
+$.fn.dataTable.Api.registerPlural(
+  'columns().search.isRegex()',
+  'column().search.isRegex()',
+  function() {
+    return this.iterator('column', (settings, column) => {
+      return settings.aoPreSearchCols[column].bRegex;
+    });
+  }
+);
 
 // hook into all DataTables initializations
 $(document).on('init.dt.dth', (event, settings) => {

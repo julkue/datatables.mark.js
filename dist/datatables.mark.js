@@ -1,5 +1,5 @@
 /*!***************************************************
- * datatables.mark.js v2.0.1
+ * datatables.mark.js v2.1.0
  * https://github.com/julmot/datatables.mark.js
  * Copyright (c) 2016–2018, Julian Kühnel
  * Released under the MIT license https://git.io/voRZ7
@@ -72,17 +72,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function mark() {
         var _this2 = this;
 
-        var globalSearch = this.instance.search();
+        var searchPattern = this.instance.search(),
+            searchRegex = this.instance.search.isRegex();
         $(this.instance.table().body()).unmark(this.options);
         this.instance.columns({
           search: 'applied',
           page: 'current'
         }).nodes().each(function (nodes, colIndex) {
           var columnSearch = _this2.instance.column(colIndex).search(),
-              searchVal = columnSearch || globalSearch;
-          if (searchVal) {
+              columnRegex = _this2.instance.columns().search.isRegex();
+          if (columnSearch) {
+            searchPattern = columnSearch;
+            searchRegex = columnRegex;
+          }
+          if (searchPattern) {
             nodes.forEach(function (node) {
-              $(node).mark(searchVal, _this2.options);
+              if (!searchRegex) {
+                $(node).mark(searchPattern, _this2.options);
+              } else {
+                $(node).markRegExp(searchPattern, _this2.options);
+              }
             });
           }
         });
@@ -91,6 +100,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     return MarkDataTables;
   }();
+
+  $.fn.dataTable.Api.register('search.isRegex()', function () {
+    var ctx = this.context;
+    return ctx.length !== 0 ? ctx[0].oPreviousSearch.bRegex : false;
+  });
+
+  $.fn.dataTable.Api.registerPlural('columns().search.isRegex()', 'column().search.isRegex()', function () {
+    return this.iterator('column', function (settings, column) {
+      return settings.aoPreSearchCols[column].bRegex;
+    });
+  });
 
   $(document).on('init.dt.dth', function (event, settings) {
     if (event.namespace !== 'dt') {
