@@ -15,10 +15,7 @@
     "commonjs": true
   },
   "parserOptions": {
-    "ecmaVersion": 6,
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
-    },
+    "ecmaVersion": 2018,
     "sourceType": "module"
   },
   "rules": {
