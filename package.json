@@ -49,7 +49,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^21.0.0",
     "grunt-jsdoc": "^2.1.1",
-    "grunt-karma": "^2.0.0",
+    "grunt-karma": "^3.0.0",
     "jasmine-core": "^3.0.0",
     "jit-grunt": "^0.10.0",
     "karma": "^3.0.0",
