@@ -3,7 +3,6 @@
 ##### A DataTables plugin for mark.js to highlight search terms in tables
 
 [![Build Status][build-status-image]][build-status]
-[![Greenkeeper][greenkeeper-image]][greenkeeper]
 [![npm Version][npm-version-image]][npm-version]
 [![Bower Version][bower-version-image]][bower-version]
 [![License][license-image]][license]
@@ -127,20 +126,18 @@ one of the default CSS files:
 See the [contribution guidelines][contributing].
 
 ## Changelog
-Changes are documented in [release][releases] descriptions.  
+Changes are documented in [release][releases] descriptions.
 
 ---
 
 Happy hacking!
 
 [build-status]: https://travis-ci.org/julmot/datatables.mark.js
-[greenkeeper]: https://github.com/julmot/datatables.mark.js
 [bower-version]: https://github.com/julmot/datatables.mark.js
 [npm-version]: https://www.npmjs.com/package/datatables.mark.js
 [license]: https://raw.githubusercontent.com/julmot/datatables.mark.js/master/LICENSE
 
 [build-status-image]: https://img.shields.io/travis/julmot/datatables.mark.js/master.svg?label=test
-[greenkeeper-image]: https://badges.greenkeeper.io/julmot/datatables.mark.js.svg
 [npm-version-image]: https://img.shields.io/npm/v/datatables.mark.js.svg
 [bower-version-image]: https://img.shields.io/bower/v/datatables.mark.js.svg
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
