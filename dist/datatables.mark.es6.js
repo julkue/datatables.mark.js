@@ -34,7 +34,7 @@
     }
 
     initMarkListener() {
-      const ev = 'draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth';
+      const ev = 'draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth responsive-display.dt.dth';
       let intvl = null;
       this.instance.on(ev, () => {
         const rows = this.instance.rows({
@@ -58,7 +58,11 @@
 
     mark() {
       const globalSearch = this.instance.search();
-      $(this.instance.table().body()).unmark(this.options);
+      const $tableBody = $(this.instance.table().body());
+      $tableBody.unmark(this.options);
+      if (this.instance.table().rows({ search: 'applied' }).data().length) {
+        $tableBody.mark(globalSearch, this.options);
+      }
       this.instance.columns({
         search: 'applied',
         page: 'current'
@@ -67,7 +71,7 @@
               searchVal = columnSearch || globalSearch;
         if (searchVal) {
           nodes.forEach(node => {
-            $(node).mark(searchVal, this.options);
+            $(node).unmark(this.options).mark(searchVal, this.options);
           });
         }
       });
