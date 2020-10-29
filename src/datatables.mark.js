@@ -30,7 +30,7 @@ class MarkDataTables {
    * Hooks into DataTables init events to call {@link Mark_DataTables#mark}
    */
   initMarkListener() {
-    const ev = 'draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth';
+    const ev = 'draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth responsive-display.dt.dth';
     let intvl = null;
     this.instance.on(ev, () => {
       // mark matches directly or after a specific time if there are more
