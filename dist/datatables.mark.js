@@ -46,7 +46,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function initMarkListener() {
         var _this = this;
 
-        var ev = 'draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth responsive-display.dt.dth';
+        var ev = 'draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth';
+        ev += ' responsive-display.dt.dth';
         var intvl = null;
         this.instance.on(ev, function () {
           var rows = _this.instance.rows({

@@ -34,7 +34,8 @@
     }
 
     initMarkListener() {
-      const ev = 'draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth responsive-display.dt.dth';
+      let ev = 'draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth';
+      ev += ' responsive-display.dt.dth';
       let intvl = null;
       this.instance.on(ev, () => {
         const rows = this.instance.rows({
