@@ -30,7 +30,8 @@ class MarkDataTables {
    * Hooks into DataTables init events to call {@link Mark_DataTables#mark}
    */
   initMarkListener() {
-    const ev = 'draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth';
+    let ev = 'draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth'; 
+    ev += ' responsive-display.dt.dth';
     let intvl = null;
     this.instance.on(ev, () => {
       // mark matches directly or after a specific time if there are more
@@ -62,7 +63,11 @@ class MarkDataTables {
    */
   mark() {
     const globalSearch = this.instance.search();
-    $(this.instance.table().body()).unmark(this.options);
+    const $tableBody = $(this.instance.table().body());
+    $tableBody.unmark(this.options);
+    if (this.instance.table().rows({search: 'applied'}).data().length){
+      $tableBody.mark(globalSearch, this.options);
+    }
     this.instance.columns({
       search: 'applied',
       page: 'current'
@@ -71,7 +76,7 @@ class MarkDataTables {
         searchVal = columnSearch || globalSearch;
       if (searchVal) {
         nodes.forEach(node => {
-          $(node).mark(searchVal, this.options);
+          $(node).unmark(this.options).mark(searchVal, this.options);
         });
       }
     });
