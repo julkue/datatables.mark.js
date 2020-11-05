@@ -1,5 +1,5 @@
 /*!***************************************************
- * datatables.mark.js v2.0.2
+ * datatables.mark.js v2.1.0
  * https://github.com/julmot/datatables.mark.js
  * Copyright (c) 2016–2020, Julian Kühnel
  * Released under the MIT license https://git.io/voRZ7
@@ -30,7 +30,7 @@ class MarkDataTables {
    * Hooks into DataTables init events to call {@link Mark_DataTables#mark}
    */
   initMarkListener() {
-    let ev = 'draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth'; 
+    let ev = 'draw.dt.dth column-visibility.dt.dth column-reorder.dt.dth';
     ev += ' responsive-display.dt.dth';
     let intvl = null;
     this.instance.on(ev, () => {
